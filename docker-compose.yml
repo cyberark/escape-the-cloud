@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  escape-the-cloud:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        buildno: 1
+    container_name: escape-the-cloud
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env

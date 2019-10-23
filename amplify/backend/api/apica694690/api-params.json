@@ -1,0 +1,47 @@
+{
+    "paths": [
+        {
+            "name": "/tasks",
+            "lambdaFunction": "cyberarkawswebapp78189a72",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH"
+                ]
+            }
+        },
+        {
+            "name": "/users",
+            "lambdaFunction": "cyberarkawswebapp78189a72",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "apica694690",
+    "apiName": "apica694690",
+    "functionArns": [
+        {
+            "lambdaFunction": "cyberarkawswebapp78189a72"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "cyberarkawswebapp-dev-20190913095352-authRole",
+        "unAuthRoleName": "cyberarkawswebapp-dev-20190913095352-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "cyberarkawswebapp78189a72",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

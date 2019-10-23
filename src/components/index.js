@@ -1,0 +1,6 @@
+export { default as H1 } from './H1'
+export { default as H6 } from './H6'
+export { default as SPAN } from './SPAN'
+export { default as YellowButton } from './YellowButton'
+export { default as BlackButton } from './BlackButton'
+export { default as StyledInput } from './StyledInput'
