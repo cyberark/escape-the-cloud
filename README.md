@@ -71,6 +71,6 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 Copyright © 2019 CyberArk Software Ltd. All rights reserved.
 
-We distribute Escape the Cloud under the following [License](./LICENSE.md)
+We distribute Escape the Cloud under the following [License](./LICENSE)
 
 Escape the Cloud also uses some third-party components and images which are licensed under their own respective licenses. The list of these licenses is summarized in [Open Source License Acknowledgements and Third-Party Copyrights](./NOTICE.md).
