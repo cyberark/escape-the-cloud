@@ -65,7 +65,7 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 ### Todos
 
- - Automatic environment deployment
+ - You tell me?
 
 ## License
 
