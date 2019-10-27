@@ -52,17 +52,6 @@ Don't forget to `docker logs escape-the-cloud` to see how the deployment progres
 
 Visit `localhost:3000` on your computer to access the UI when you see `Compiled` on the logs.
 
-### Development
-
-Want to contribute? Great!
-Make a change in the files on the `src` folder, and instantanously see your updates!
-
-Verify the deployment by navigating to your server address in your preferred browser.
-
-```sh
-127.0.0.1:3000
-```
-
 ### Todos
 
  - You tell me?
