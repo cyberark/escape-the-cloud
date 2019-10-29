@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "quicksight.amazonaws.com",
+          "sagemaker.amazonaws.com",
+          "amplify.amazonaws.com",
+          "robomaker.amazonaws.com",
+          "ecs-tasks.amazonaws.com",
+          "cloudtrail.amazonaws.com",
+          "cloud9.amazonaws.com",
+          "codecommit.amazonaws.com",
+          "lambda.amazonaws.com",
+          "ec2.amazonaws.com",
+          "glue.amazonaws.com",
+          "cloudformation.amazonaws.com",
+          "ecs.amazonaws.com",
+          "eks.amazonaws.com",
+          "cloudwatch.amazonaws.com",
+          "dynamodb.amazonaws.com",
+          "rds.amazonaws.com",
+          "deepracer.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
