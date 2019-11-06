@@ -16,15 +16,59 @@ Escape The Cloud uses a number of awesome open source projects to work properly:
 * [React Redux](https://github.com/reduxjs/react-redux) - Official React bindings for Redux
 * [Prettier](https://github.com/prettier/prettier) - An opinionated code formatter.
 
+### Getting Started
+
+Welcome to Escape the Cloud!
+
+In this challenge, you’ll get some hands on experience with AWS services related to both the usage and security features of each service. For each service, we will present you with a mission that you’ll need to solve.
+
+Please read the following guidelines carefully in order to complete the tasks:
+Every mission ends with a secret and a hint for the next mission. Please keep any information you find in a safe place, as you may need it on another missions as you progress through the challenge.
+
+1. Every mission focuses on a single AWS service. While working on a specific service, you are not required to explore other services in the AWS console.
+2. The challenge was built and designed for educational purposes. We’re encouraging you to explore the AWS services and try to unblock resources in order to access them and progress through the challenge.
+
+### Running the challenge on your AWS account
+
+Please read the following instructions carefully, since you won’t be able to start the challenge without properly configuring the account:
+
+1. Please log in to your AWS account with an Administrator user.
+2. Create two IAM policies:
+   - BasicTeamRolePolicy - Copy the content from [BasicTeamRolePolicy.json](./BasicTeamRolePolicy.json), and replace ‘xxxxxxxxxxxx’ with your AWS account number.
+   - RestrictTeamRolePolicy - Copy the content from [RestrictTeamRolePolicy.json](./RestrictTeamRolePolicy.json), and replace ‘xxxxxxxxxxxx’ with your AWS account number.
+ 3. Create an IAM Role named TeamRole and attach both policies to this role. After attaching the policies, go to Trust Relationships on TeamRole and copy the content from [TrustRelationshipsPolicy.json](./TrustRelationshipsPolicy.json).
+ 4. Create a new IAM user (I.E challengeuser ) with Console Access. While choosing permissions, choose the created IAM policies 
+ 5. Please log out and log in with the newly created user, using the username and password you chose during the user creation.
+ 6. Deploy the solution (with or without docker). On the website, go to the sign up screen and enter your username, email address, and password. Please use only lowercase characters (no numbers, no special characters, etc) while choosing your username. After the initial registration, an activation email should be sent to you. Click the confirmation link to get started.
+ 7. On the website, after you logged in to your environment and completed the onboarding process, the Play Snake button should be replaced with a Start button. If it didn’t, refresh the page. If it still not working, contact us or open an issue.
+
+### Recommendations
+
+For the sake of the challenge, you are authorized, but not allowed to create any resources. The CloudFormation stack will provision all the resources needed for the missions. We’ll mention a few resources you might think creating during the challenge:
+- RDS replications.
+- RDS snapshots.
+- EC2 Instances.
+- Amazon Machine Images (AMI).
+- EBS volume snapshots.
+- S3 bucket using cross-region replication.
+
+This challenge and accounts were tailored to the training purposes, please do not use your  AWS account permissions to abuse the system.
+
 ### Installation
 
 Escape The Cloud requires [Node.js](https://nodejs.org/) v12+ to run.
+
+Update your terminal's environment variables with your AWS programmatic user credentials:
+````
+AWS_ACCESS_KEY_ID=AKIA*****************************
+AWS_SECRET_ACCESS_KEY=*****************************
+````
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
 $ npm install -g @aws-amplify/cli
-$ git clone https://github.com/avishayil/escape-the-cloud
+$ git clone https://github.com/cyberark/escape-the-cloud
 $ cd escape-the-cloud
 $ yarn
 $ ./headless_init_env.sh

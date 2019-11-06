@@ -1,0 +1,87 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:List*",
+                "iam:Get*",
+                "iam:Generate*",
+                "sts:GetCallerIdentity"
+            ],
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "AllowIAMRO"
+        },
+        {
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "iam:PassRole"
+            ],
+            "Resource": "arn:aws:iam::xxxxxxxxxxxx:role/TeamRole",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "route53domains:*",
+                "ec2:ModifyReservedInstances",
+                "ec2:PurchaseHostReservation",
+                "ec2:PurchaseReservedInstancesOffering",
+                "ec2:PurchaseScheduledInstances",
+                "rds:PurchaseReservedDBInstancesOffering",
+                "dynamodb:PurchaseReservedCapacityOfferings",
+                "s3:PutObjectRetention",
+                "s3:PutObjectLegalHold",
+                "s3:BypassGovernanceRetention",
+                "s3:PutBucketObjectLockConfiguration"
+            ],
+            "Resource": "*",
+            "Effect": "Deny",
+            "Sid": "DenyBlacklist"
+        },
+        {
+            "NotAction": [
+                "iam:*",
+                "sts:*",
+                "s3:*",
+                "ds:*",
+                "quicksight:*",
+                "cloudfront:*",
+                "route53:*",
+                "servicediscovery:*",
+                "waf:*",
+                "waf-regional:*",
+                "cloudwatch:DescribeAlarms",
+                "cloudwatch:PutMetricAlarm",
+                "cloudwatch:DeleteAlarms",
+                "cloudwatch:GetMetricStatistics",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetAuthorizationToken",
+                "globalaccelerator:*",
+                "acm:List*",
+                "acm:Describe*",
+                "kms:Describe*",
+                "kms:ReEncrypt*",
+                "kms:Get*",
+                "kms:List*",
+                "kms:CreateGrant",
+                "kms:RevokeGrant"
+            ],
+            "Resource": "*",
+            "Effect": "Deny",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:RequestedRegion": [
+                        "eu-west-1"
+                    ]
+                }
+            },
+            "Sid": "DenyAllOutsideTargetRegion"
+        }
+    ]
+}
