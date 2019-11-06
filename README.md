@@ -58,11 +58,17 @@ This challenge and accounts were tailored to the training purposes, please do no
 
 Escape The Cloud requires [Node.js](https://nodejs.org/) v12+ to run.
 
+Update your terminal's environment variables with your AWS programmatic user credentials:
+````
+AWS_ACCESS_KEY_ID=AKIA*****************************
+AWS_SECRET_ACCESS_KEY=*****************************
+````
+
 Install the dependencies and devDependencies and start the server.
 
 ```sh
 $ npm install -g @aws-amplify/cli
-$ git clone https://github.com/avishayil/escape-the-cloud
+$ git clone https://github.com/cyberark/escape-the-cloud
 $ cd escape-the-cloud
 $ yarn
 $ ./headless_init_env.sh
