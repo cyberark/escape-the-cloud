@@ -8,8 +8,8 @@ Escape The Cloud requires [Node.js](https://nodejs.org/) v12+ to run.
 
 Update your terminal's environment variables with your AWS programmatic user credentials:
 ````
-AWS_ACCESS_KEY_ID=AKIA*****************************
-AWS_SECRET_ACCESS_KEY=*****************************
+export AWS_ACCESS_KEY_ID=AKIA*****************************
+export AWS_SECRET_ACCESS_KEY=*****************************
 ````
 
 Install the dependencies and devDependencies and start the server.
@@ -23,11 +23,12 @@ $ yarn
 
 #### AWS Environment Initialization
 
-- Initialize the AWS environment (Run once): `./headless_init_env.sh`
+- Initialize the AWS environment (Run once): `source ./headless_init_env.sh`
 
 #### Cleanup
 
 - Clean the AWS environment when your'e done (Run once): `./headless_clean_env.sh`
+- Reset the repository: `git reset --hard && git clean -fd`
 
 ### Deployment with Docker
 
