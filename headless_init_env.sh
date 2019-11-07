@@ -22,5 +22,3 @@ amplify init \
 --amplify $INIT \
 --providers $PROVIDERS \
 --yes
-
-npm start
