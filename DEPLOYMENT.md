@@ -64,4 +64,4 @@ Visit `localhost:3000` on your computer to access the UI when you see `Failed to
 
 ### Playing in the challenge
 
-Ready to play? visit the [Playing](./PLAYING) page to start a jam!
+Ready to play? visit the [Playing](./PLAYING.md) page to start a jam!

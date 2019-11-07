@@ -30,7 +30,7 @@ Every mission ends with a secret and a hint for the next mission. Please keep an
 
 ### Deployment
 
-Ready to get started? head to the [Deployment](./DEPLOYMENT) section.
+Ready to get started? head to the [Deployment](./DEPLOYMENT.md) section.
 
 ### Todos
 
