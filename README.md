@@ -83,18 +83,29 @@ $ ./headless_init_env.sh
 
 It's easy to deploy Escape The Cloud using the attached Dockerfile!
 - Build the image: `docker build -t me/escape-the-cloud .`
-- Run the container: `docker run -dit -p 3000:3000 --env-file .env --name escape-the-cloud me/escape-the-cloud`
+- Start the container: `docker run -dit -p 3000:3000 --env-file .env --name escape-the-cloud me/escape-the-cloud`
 
 #### Using docker-compose
 
 It's easy to deploy Escape The Cloud using the attached docker-compose file!
+- If you're using different docker daemon then `/var/run/docker.sock` please update the `docker-compose.yml` file.
 - Build the image locally and run the container: `docker-compose up -d`
+
+#### AWS Environment Initialization
+
+- Initialize the AWS environment (Run once): `docker exec escape-the-cloud /app/headless_init_env.sh`
+
+#### Cleanup
+
+- Clean the AWS environment when your'e done (Run once): `docker exec escape-the-cloud sh /app/headless_clean_env.sh`
+- Stop the container: `docker stop escape-the-cloud`
+- Remove the container: `docker rm escape-the-cloud`
 
 ### Deployment progress & UI
 
 Don't forget to `docker logs escape-the-cloud` to see how the deployment progress is doing.
 
-Visit `localhost:3000` on your computer to access the UI when you see `Compiled` on the logs.
+Visit `localhost:3000` on your computer to access the UI when you see `Failed to compile` on the logs (since no AWS environment is provisioned until you'll execute the `headless_init_env` file).
 
 ### Todos
 
