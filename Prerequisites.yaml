@@ -36,8 +36,6 @@ Resources:
       PolicyName: BasicTeamRolePolicy
       Roles:
         - !Ref TeamRole
-      Groups:
-        - !Ref ChallengeGroup
       PolicyDocument:
         Version: 2012-10-17
         Statement:
@@ -203,8 +201,6 @@ Resources:
       PolicyName: RestrictTeamRolePolicy
       Roles:
         - !Ref TeamRole
-      Groups:
-        - !Ref ChallengeGroup
       PolicyDocument:
         Version: 2012-10-17
         Statement:
@@ -276,42 +272,3 @@ Resources:
               StringNotEquals:
                 aws:RequestedRegion:
                 - eu-west-1
-  ChallengeGroup:
-    Type: AWS::IAM::Group
-    Properties: 
-      GroupName: ChallengeGroup
-  ChallengeUser:
-    Type: AWS::IAM::User
-    Properties:
-      UserName: !Ref ChallengeUserName
-      LoginProfile:
-        Password: !Ref ChallengeUserPassword
-      Groups:
-        - !Ref ChallengeGroup
-Parameters:
-  ChallengeUserName:
-    Description: Name for the created challenge user.
-    Type: String
-    MinLength: 1
-    MaxLength: 41
-    AllowedPattern: ^[a-zA-Z0-9_.-]*$
-    ConstraintDescription: must include letters and numbers only.
-  ChallengeUserPassword:
-    Description: Password for the created challenge user. Must be compatible with account password policy.
-    Type: String
-    NoEcho: true
-    MinLength: 1
-    MaxLength: 24
-Metadata:
-  AWS::CloudFormation::Interface: 
-    ParameterGroups: 
-      - Label: 
-          default: "User Configuration"
-        Parameters: 
-          - ChallengeUserName
-          - ChallengeUserPassword
-    ParameterLabels: 
-      ChallengeUserName: 
-        default: "Username"
-      ChallengeUserPassword: 
-        default: "Password"
