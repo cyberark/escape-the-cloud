@@ -312,7 +312,7 @@
                "ZipFile": "const response = require(\"cfn-response\");\nconst crypto = require(\"crypto\");\nexports.handler = (event, context) =>{\n\n  var data = event['ResourceProperties']['ServiceName'] + event['ResourceProperties']['UserName'];\n var str = crypto.createHash('md5').update(data).digest(\"hex\");\n  const responseData = {Secret: str};\n  response.send(event, context, response.SUCCESS, responseData);\n\n};\n"
             },
             "Handler": "index.handler",
-            "Runtime": "nodejs8.10",
+            "Runtime": "nodejs12.x",
             "Role": {
                "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/TeamRole"
             },
@@ -391,7 +391,7 @@
                   "API_TOKEN": { "Ref": "ApiToken" }
                }
             },
-            "Runtime": "nodejs8.10",
+            "Runtime": "nodejs12.x",
             "Timeout": 25,
             "TracingConfig": {
                "Mode": "Active"
@@ -554,7 +554,7 @@
             "Role": {
                "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/TeamRole"
             },
-            "Runtime": "nodejs8.10",
+            "Runtime": "nodejs12.x",
             "Timeout": "30"
          }
       },
@@ -598,7 +598,7 @@
                   }
                }
             },
-            "Runtime": "nodejs8.10",
+            "Runtime": "nodejs12.x",
             "Timeout": 25,
             "TracingConfig": {
                "Mode": "Active"
@@ -1141,7 +1141,7 @@
          "Description": "Enter a user identifier."
       },
       "ApiHost": {
-         "Type": "Enter the API host",
+         "Type": "String",
          "Description": "Enter a user identifier."
       },
       "ApiToken": {
