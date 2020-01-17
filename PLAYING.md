@@ -8,8 +8,10 @@ Please read the following instructions carefully, since you won’t be able to s
 
  1. Please log in to your AWS account with an Administrator user.
  2. Deploy IAM policies to your account (if they not exist) by deploying the `Prerequisites.yaml` using CloudFormation. It will create the following:
-   - IAM Group
-   - IAM User, IAM Role and
+     - IAM Group
+     - IAM User
+     - IAM Role
+     - Two IAM Policies attached to the role, and group
  3. Please log out and log in with the newly created IAM user, using the username and password you chose during the user creation.
  6. On the website, go to the sign up screen and enter your username, email address, and password. Please use only lowercase characters (no numbers, no special characters, etc) while choosing your username. After the initial registration, an activation email should be sent to you. Click the confirmation link to get started.
  7. Deploy the `escape-the-cloud.json` template using CloudFormation and wait for it to finish. Your'e username on the CloudFormation template should match the username you used to register to the challenge.
