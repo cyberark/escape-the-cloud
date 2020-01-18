@@ -49,7 +49,7 @@ It's easy to deploy Escape The Cloud using the attached docker-compose file!
 
 #### AWS Environment Initialization
 
-- Initialize the AWS environment (Run once): `docker exec escape-the-cloud /app/headless_init_env.sh`
+- Initialize the AWS environment (Run once): `docker exec escape-the-cloud sh /app/headless_init_env.sh`
 
 #### Cleanup
 
