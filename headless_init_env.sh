@@ -2,15 +2,14 @@
 set -e
 IFS='|'
 
-cuser=$(whoami)
-mkdir -p /home/$cuser/.aws
-echo "[escape]" >> /home/$cuser/.aws/credentials
-echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> /home/$cuser/.aws/credentials
-echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> /home/$cuser/.aws/credentials
+mkdir -p /root/.aws
+echo "[escape]" >> /root/.aws/credentials
+echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> /root/.aws/credentials
+echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> /root/.aws/credentials
 
-echo "[escape]" >> /home/$cuser/.aws/config
-echo "output=json" >> /home/$cuser/.aws/config
-echo "region=eu-west-1" >> /home/$cuser/.aws/config
+echo "[escape]" >> /root/.aws/config
+echo "output=json" >> /root/.aws/config
+echo "region=eu-west-1" >> /root/.aws/config
 
 REACTCONFIG="{\"SourceDir\":\"src\",\"DistributionDir\":\"build\",\"BuildCommand\":\"npm run-script build\",\"StartCommand\":\"npm run-script start\"}"
 AWSCLOUDFORMATIONCONFIG="{\"configLevel\":\"project\",\"useProfile\":true,\"profileName\":\"escape\",\"region\":\"eu-west-1\"}"
